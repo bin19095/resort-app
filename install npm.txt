@@ -1,0 +1,6 @@
+npm install --save styled-components
+
+<Room  room={room}/>
+<Room/>
+(<Room/> will replace the first component Room leading to 
+passing empty props to children)
