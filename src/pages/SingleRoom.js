@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import defaultBcg from '../images/room-1.jpeg';
-import Hero from '../components/Hero';
 import Banner from "../components/Banner";
 import {Link} from 'react-router-dom';
 import {RoomContext} from '../context';
@@ -21,7 +20,6 @@ class SingleRoom extends Component {
     render() {
         const {getRoom} = this.context;
         const room = getRoom(this.state.slug);
-        console.log(room);
         if(!room){
             return (<div className="error">
                 <h3>No Such Room Could be Found...</h3>
@@ -39,8 +37,8 @@ class SingleRoom extends Component {
             breakfast,
             pets,
             images} = room
-            const [mainImg,...defaultImg] = images
-        console.log("console single Room->",defaultImg)
+            // eslint-disable-next-line no-unused-vars
+            const [mainImg,...defaultImg] = images;
         return (
             <>
                 <StyledHero img={images[0] || this.state.defaultBcg} >
